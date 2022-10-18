@@ -27,7 +27,7 @@ describe('<TodoList />', () => {
         const {getByText, getAllByText} = render(<TodoList todos={sampleTodos}
             onToggle={onToggle} onRemove={onRemove}/>);
         fireEvent.click(getByText(sampleTodos[0].text));
-        expect(onToggle).toBeCalledWith(dsmolrTodos.id);
+        expect(onToggle).toBeCalledWith(sampleTodos[0].id);
         fireEvent.click(getAllByText('삭제')[0]);
         expect(onRemove).toBeCalledWith(sampleTodos[0].id);    
     });
